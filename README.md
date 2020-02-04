@@ -10,11 +10,11 @@
 <img src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/all.png" width = "300" height = "200" div align=center />
 
 ### 界面图
----
+
     
 
 
-<div style="margin-bottom:10px;">
+
 <img style="margin-right:20px;margin-top:10px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/13.jpg" width = "200" height = "400" div align=center />
 
 <img style="margin-right:20px;margin-top:10px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/14.jpg" width = "200" height = "400" div align=center />
@@ -39,9 +39,9 @@
 <img style="margin-right:20px;margin-top:20px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/8.jpg" width = "200" height = "400" div align=center />
 
 <img style="margin-right:20px;margin-top:20px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/7.jpg" width = "200" height = "400" div align=center />
-<div/>
+
+
 ## 数据来源
----
 
 1. 天行数据
 2. BlankerL大佬：https://github.com/BlankerL/DXY-2019-nCoV-Crawler
@@ -51,7 +51,7 @@
 #### 对以上表示感谢！
 
 ## 主要使用插件：
----
+
 1. dio: 1.0.13
 2. flutter_easyrefresh: ^1.0.1
 3. webview_flutter: ^0.3.19+5
