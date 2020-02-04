@@ -219,10 +219,32 @@ class _gatherState extends State<gather> {
           ),
           InkWell(
             child: Card(
+                color: Colors.green[300],
+                child: Padding(
+                  child: Text(
+                    "github地址",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
+                  padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
+                )),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                return Browser(
+                  url: "https://github.com/LiangWuCode/2019-nCoV",
+                  title: "战疫情github",
+                );
+              }));
+            },
+          ),
+          InkWell(
+            child: Card(
                 color: Colors.pink[300],
                 child: Padding(
                   child: Text(
-                    "问题反馈---关于我",
+                    "关于我",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

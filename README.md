@@ -2,11 +2,13 @@
 
 
 <img src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/assets/images/start.png" width = "100" height = "100" div align=center /><br/>
-本项目使用flutter开发,主要内容为疫情地图、实时疫情、同行程查询、辟谣、以及收集平台疫情通道，以达到实时掌握最新疫情，完成紧急辟谣等目的。
+本项目使用flutter开发,主要内容为疫情地图、实时疫情、同行程查询、辟谣、以及收集平台疫情通道，以达到实时掌握最新疫情，完成紧急辟谣,同行程车次查询等目的。
+
+##### 欢迎Star..... 交流学习。
 
 
 ## 总体图：
----
+
 <img src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/all.png" width = "300" height = "200" div align=center />
 
 ### 界面图
