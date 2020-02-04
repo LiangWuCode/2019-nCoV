@@ -14,7 +14,7 @@
     
 
 
-
+<div style="margin-bottom:10px;">
 <img style="margin-right:20px;margin-top:10px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/13.jpg" width = "200" height = "400" div align=center />
 
 <img style="margin-right:20px;margin-top:10px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/14.jpg" width = "200" height = "400" div align=center />
@@ -39,7 +39,7 @@
 <img style="margin-right:20px;margin-top:20px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/8.jpg" width = "200" height = "400" div align=center />
 
 <img style="margin-right:20px;margin-top:20px" src="https://raw.githubusercontent.com/LiangWuCode/2019-nCoV/master/resources/7.jpg" width = "200" height = "400" div align=center />
-
+<div/>
 
 ## 数据来源
 
