@@ -52,9 +52,10 @@ class _RumorState extends State<Rumor> {
                   Padding(
                     padding: EdgeInsets.only(left: 10.0),
                   ),
-                  
                   Image.network(
-                    "http:" + item.imgsrc,
+                    item.imgsrc.contains("http")
+                        ? item.imgsrc
+                        : "http:" + item.imgsrc,
                     width: 80,
                     height: 80,
                     fit: BoxFit.cover,
