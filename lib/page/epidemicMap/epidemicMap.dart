@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:disease/model/Epidemi.dart';
 import 'package:flutter/material.dart';
 import 'package:disease/api/api.dart';
@@ -44,7 +43,8 @@ class _EpidemicMapState extends State<EpidemicMap> {
         builder: (context, snap) {
           if (snap.hasData) {
             epidemic = epidemiFromJson(convert.jsonEncode(snap.data));
-            _expansionPanelListWidget(epidemic);
+            // print(epidemic.code);
+            // _expansionPanelListWidget(epidemic);
             _swiperWidget(epidemic, context);
             ContainerWidget = buildContainer(epidemic);
             return Scaffold(
@@ -60,7 +60,7 @@ class _EpidemicMapState extends State<EpidemicMap> {
                       convert.jsonEncode(await Api.epidemi({})));
                   setState(() {
                     epidemic = epidemic;
-                    _expansionPanelListWidget(epidemic);
+                    // _expansionPanelListWidget(epidemic);
                     _swiperWidget(epidemic, context);
                     ContainerWidget = buildContainer(epidemic);
                   });
@@ -362,11 +362,12 @@ class _EpidemicMapState extends State<EpidemicMap> {
                               color: Colors.black,
                               fontSize: 14.0,
                               fontWeight: FontWeight.bold)),
-                      Text(
+                      Expanded(
+                          child: Text(
                         epidemic.newslist[0].desc.note2.substring(
                             epidemic.newslist[0].desc.note2.indexOf("：") + 1,
                             epidemic.newslist[0].desc.note2.length),
-                      )
+                      ))
                     ],
                   ),
                   Padding(
@@ -546,21 +547,21 @@ class _EpidemicMapState extends State<EpidemicMap> {
               Padding(
                 padding: EdgeInsets.only(bottom: 10.0),
               ),
-              Card(
-                color: Colors.teal[200],
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(left: 10.0, top: 10, bottom: 10),
-                      child: Text("全国疫情实时增加：",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                  ],
-                ),
-              ),
+              // Card(
+              //   color: Colors.teal[200],
+              //   child: Row(
+              //     children: <Widget>[
+              //       Padding(
+              //         padding: EdgeInsets.only(left: 10.0, top: 10, bottom: 10),
+              //         child: Text("全国疫情实时增加：",
+              //             style: TextStyle(
+              //                 color: Colors.white,
+              //                 fontSize: 14.0,
+              //                 fontWeight: FontWeight.bold)),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               ExpansionPanelList(
                 children: ExpansionPanelList1,
                 expansionCallback: (panelIndex, isExpanded) {
@@ -601,171 +602,171 @@ class _EpidemicMapState extends State<EpidemicMap> {
     );
   }
 
-  void _expansionPanelListWidget(Epidemi epidemic) {
-    ExpansionPanelList1.clear();
-    for (int i = 0; i < epidemic.newslist[0].newslistCase.length; i++) {
-      ExpansionPanelList1.add(ExpansionPanel(
-        headerBuilder: (context, isExpanded) {
-          return ListTile(
-            title: Text(
-              epidemic.newslist[0].newslistCase[i].provinceName,
-              style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Text(
-              DateTime.fromMillisecondsSinceEpoch(
-                      epidemic.newslist[0].newslistCase[i].modifyTime)
-                  .toString()
-                  .substring(0, 19),
-              style: TextStyle(
-                  fontSize: 12.0,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold),
-            ),
-          );
-        },
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(15, 0, 15, 5),
-          child: ListBody(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              epidemic
-                                  .newslist[0].newslistCase[i].confirmedCount
-                                  .toString(),
-                              style: TextStyle(
-                                  color: Colors.orange,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14.0),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text("确诊病例",
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 10.0))
-                          ],
-                        )
-                      ],
-                    ),
-                    flex: 1,
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                                epidemic
-                                    .newslist[0].newslistCase[i].suspectedCount
-                                    .toString(),
-                                style: TextStyle(
-                                    color: Colors.red[300],
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14.0))
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text("疑似病例",
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 10.0))
-                          ],
-                        )
-                      ],
-                    ),
-                    flex: 1,
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                                epidemic.newslist[0].newslistCase[i].deadCount
-                                    .toString(),
-                                style: TextStyle(
-                                    color: Colors.redAccent,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14.0))
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text("死亡人数",
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 10.0))
-                          ],
-                        )
-                      ],
-                    ),
-                    flex: 1,
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                                epidemic.newslist[0].newslistCase[i].curedCount
-                                    .toString(),
-                                style: TextStyle(
-                                    color: Colors.green,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14.0))
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text("治愈人数",
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 10.0))
-                          ],
-                        )
-                      ],
-                    ),
-                    flex: 1,
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 10, top: 10),
-                child: Text(epidemic.newslist[0].newslistCase[i].tags,
-                    style:
-                        TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold)),
-              ),
-            ],
-          ),
-        ),
-        isExpanded: panelIndex1 == i,
-        canTapOnHeader: true,
-      ));
-    }
-  }
+  // void _expansionPanelListWidget(Epidemi epidemic) {
+  //   ExpansionPanelList1.clear();
+  //   for (int i = 0; i < epidemic.newslist[0].newslistCase.length; i++) {
+  //     ExpansionPanelList1.add(ExpansionPanel(
+  //       headerBuilder: (context, isExpanded) {
+  //         return ListTile(
+  //           title: Text(
+  //             epidemic.newslist[0].newslistCase[i].provinceName,
+  //             style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
+  //           ),
+  //           subtitle: Text(
+  //             DateTime.fromMillisecondsSinceEpoch(
+  //                     epidemic.newslist[0].newslistCase[i].modifyTime)
+  //                 .toString()
+  //                 .substring(0, 19),
+  //             style: TextStyle(
+  //                 fontSize: 12.0,
+  //                 color: Colors.grey,
+  //                 fontWeight: FontWeight.bold),
+  //           ),
+  //         );
+  //       },
+  //       body: Padding(
+  //         padding: EdgeInsets.fromLTRB(15, 0, 15, 5),
+  //         child: ListBody(
+  //           children: <Widget>[
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               crossAxisAlignment: CrossAxisAlignment.center,
+  //               children: <Widget>[
+  //                 Expanded(
+  //                   child: Column(
+  //                     children: <Widget>[
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text(
+  //                             epidemic
+  //                                 .newslist[0].newslistCase[i].confirmedCount
+  //                                 .toString(),
+  //                             style: TextStyle(
+  //                                 color: Colors.orange,
+  //                                 fontWeight: FontWeight.bold,
+  //                                 fontSize: 14.0),
+  //                           )
+  //                         ],
+  //                       ),
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text("确诊病例",
+  //                               style: TextStyle(
+  //                                   color: Colors.grey, fontSize: 10.0))
+  //                         ],
+  //                       )
+  //                     ],
+  //                   ),
+  //                   flex: 1,
+  //                 ),
+  //                 Expanded(
+  //                   child: Column(
+  //                     children: <Widget>[
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text(
+  //                               epidemic
+  //                                   .newslist[0].newslistCase[i].suspectedCount
+  //                                   .toString(),
+  //                               style: TextStyle(
+  //                                   color: Colors.red[300],
+  //                                   fontWeight: FontWeight.bold,
+  //                                   fontSize: 14.0))
+  //                         ],
+  //                       ),
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text("疑似病例",
+  //                               style: TextStyle(
+  //                                   color: Colors.grey, fontSize: 10.0))
+  //                         ],
+  //                       )
+  //                     ],
+  //                   ),
+  //                   flex: 1,
+  //                 ),
+  //                 Expanded(
+  //                   child: Column(
+  //                     children: <Widget>[
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text(
+  //                               epidemic.newslist[0].newslistCase[i].deadCount
+  //                                   .toString(),
+  //                               style: TextStyle(
+  //                                   color: Colors.redAccent,
+  //                                   fontWeight: FontWeight.bold,
+  //                                   fontSize: 14.0))
+  //                         ],
+  //                       ),
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text("死亡人数",
+  //                               style: TextStyle(
+  //                                   color: Colors.grey, fontSize: 10.0))
+  //                         ],
+  //                       )
+  //                     ],
+  //                   ),
+  //                   flex: 1,
+  //                 ),
+  //                 Expanded(
+  //                   child: Column(
+  //                     children: <Widget>[
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text(
+  //                               epidemic.newslist[0].newslistCase[i].curedCount
+  //                                   .toString(),
+  //                               style: TextStyle(
+  //                                   color: Colors.green,
+  //                                   fontWeight: FontWeight.bold,
+  //                                   fontSize: 14.0))
+  //                         ],
+  //                       ),
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.center,
+  //                         crossAxisAlignment: CrossAxisAlignment.center,
+  //                         children: <Widget>[
+  //                           Text("治愈人数",
+  //                               style: TextStyle(
+  //                                   color: Colors.grey, fontSize: 10.0))
+  //                         ],
+  //                       )
+  //                     ],
+  //                   ),
+  //                   flex: 1,
+  //                 ),
+  //               ],
+  //             ),
+  //             Padding(
+  //               padding: EdgeInsets.only(bottom: 10, top: 10),
+  //               child: Text(epidemic.newslist[0].newslistCase[i].tags,
+  //                   style:
+  //                       TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold)),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //       isExpanded: panelIndex1 == i,
+  //       canTapOnHeader: true,
+  //     ));
+  //   }
+  // }
 
   Future getEpidemic() async {
     return await Api.epidemi({});

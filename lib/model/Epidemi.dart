@@ -35,25 +35,20 @@ class Epidemi {
 
 class Newslist {
   List<News> news;
-  List<Case> newslistCase;
   Desc desc;
 
   Newslist({
     this.news,
-    this.newslistCase,
     this.desc,
   });
 
   factory Newslist.fromJson(Map<String, dynamic> json) => Newslist(
         news: List<News>.from(json["news"].map((x) => News.fromJson(x))),
-        newslistCase:
-            List<Case>.from(json["case"].map((x) => Case.fromJson(x))),
         desc: Desc.fromJson(json["desc"]),
       );
 
   Map<String, dynamic> toJson() => {
         "news": List<dynamic>.from(news.map((x) => x.toJson())),
-        "case": List<dynamic>.from(newslistCase.map((x) => x.toJson())),
         "desc": desc.toJson(),
       };
 }
@@ -208,6 +203,7 @@ class News {
   String pubDateStr;
   String title;
   String summary;
+  String body;
   String infoSource;
   String sourceUrl;
   String provinceId;
@@ -227,6 +223,7 @@ class News {
     this.pubDateStr,
     this.title,
     this.summary,
+    this.body,
     this.infoSource,
     this.sourceUrl,
     this.provinceId,
@@ -247,11 +244,11 @@ class News {
         pubDateStr: json["pubDateStr"],
         title: json["title"],
         summary: json["summary"],
+        body: json["body"],
         infoSource: json["infoSource"],
         sourceUrl: json["sourceUrl"],
         provinceId: json["provinceId"],
-        provinceName:
-            json["provinceName"] == null ? null : json["provinceName"],
+        provinceName: json["provinceName"],
         createTime: json["createTime"],
         modifyTime: json["modifyTime"],
         entryWay: json["entryWay"],
@@ -268,10 +265,11 @@ class News {
         "pubDateStr": pubDateStr,
         "title": title,
         "summary": summary,
+        "body": body,
         "infoSource": infoSource,
         "sourceUrl": sourceUrl,
         "provinceId": provinceId,
-        "provinceName": provinceName == null ? null : provinceName,
+        "provinceName": provinceName,
         "createTime": createTime,
         "modifyTime": modifyTime,
         "entryWay": entryWay,
@@ -280,89 +278,5 @@ class News {
         "dataInfoState": dataInfoState,
         "dataInfoOperator": dataInfoOperator,
         "dataInfoTime": dataInfoTime,
-      };
-}
-
-class Case {
-  int id;
-  int createTime;
-  int modifyTime;
-  String tags;
-  int countryType;
-  String continents;
-  String provinceId;
-  String provinceName;
-  String provinceShortName;
-  String cityName;
-  int confirmedCount;
-  int suspectedCount;
-  int curedCount;
-  int deadCount;
-  String comment;
-  int sort;
-  String caseOperator;
-  int locationId;
-
-  Case({
-    this.id,
-    this.createTime,
-    this.modifyTime,
-    this.tags,
-    this.countryType,
-    this.continents,
-    this.provinceId,
-    this.provinceName,
-    this.provinceShortName,
-    this.cityName,
-    this.confirmedCount,
-    this.suspectedCount,
-    this.curedCount,
-    this.deadCount,
-    this.comment,
-    this.sort,
-    this.caseOperator,
-    this.locationId,
-  });
-
-  factory Case.fromJson(Map<String, dynamic> json) => Case(
-        id: json["id"],
-        createTime: json["createTime"],
-        modifyTime: json["modifyTime"],
-        tags: json["tags"],
-        countryType: json["countryType"],
-        continents: json["continents"],
-        provinceId: json["provinceId"],
-        provinceName: json["provinceName"],
-        provinceShortName: json["provinceShortName"],
-        cityName: json["cityName"],
-        confirmedCount: json["confirmedCount"],
-        suspectedCount: json["suspectedCount"],
-        curedCount: json["curedCount"],
-        deadCount: json["deadCount"],
-        comment: json["comment"],
-        sort: json["sort"],
-        caseOperator: json["operator"],
-        locationId: json["locationId"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "createTime": createTime,
-        "modifyTime": modifyTime,
-        "tags": tags,
-        "countryType": countryType,
-        "continents": continents,
-        "provinceId": provinceId,
-        "provinceName": provinceName,
-        "provinceShortName": provinceShortName,
-        "cityName": cityName,
-        "confirmedCount": confirmedCount,
-        "suspectedCount": suspectedCount,
-        "curedCount": curedCount,
-        "deadCount": deadCount,
-        "comment": comment,
-        "sort": sort,
-        "operator": caseOperator,
-        "locationId": locationId,
       };
 }
