@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:nav_router/nav_router.dart';
 
 import 'components/splash.dart';
 import 'components/tab.dart';
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return BotToastInit(
         child: MaterialApp(
       title: '战疫情',
+      navigatorKey: navGK,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.red),
       localizationsDelegates: [

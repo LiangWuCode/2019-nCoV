@@ -28,6 +28,7 @@ class _TabWidgetState extends State<TabWidget> {
       ..add(Rumor())
       ..add(gather());
     super.initState();
+    
   }
 
   @override

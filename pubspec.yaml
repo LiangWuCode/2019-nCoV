@@ -30,6 +30,7 @@ dependencies:
   lpinyin: ^1.0.8
   flutter_swiper: ^1.1.6
   splashscreen: ^1.2.0
+  nav_router: any
   flutter_localizations:
     sdk: flutter
 dev_dependencies:

@@ -1,5 +1,6 @@
 import 'package:disease/components/Browser.dart';
 import 'package:flutter/material.dart';
+import 'package:nav_router/nav_router.dart';
 
 class gather extends StatefulWidget {
   gather({Key key}) : super(key: key);
@@ -32,12 +33,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                return Browser(
-                  url: "https://3g.dxy.cn/newh5/view/pneumonia",
-                  title: "丁香园",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://3g.dxy.cn/newh5/view/pneumonia",
+                    title: "丁香园",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -54,12 +55,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://news.sina.cn/zt_d/yiqing0121",
-                  title: "新浪",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://news.sina.cn/zt_d/yiqing0121",
+                    title: "新浪",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -76,12 +77,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "http://m.medsci.cn/wh.asp",
-                  title: "梅斯",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "http://m.medsci.cn/wh.asp",
+                    title: "梅斯",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -98,12 +99,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://www.zhihu.com/special/19681091",
-                  title: "知乎",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://www.zhihu.com/special/19681091",
+                    title: "知乎",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -120,12 +121,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://m.yicai.com/news/100476965.html",
-                  title: "第一财经",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://m.yicai.com/news/100476965.html",
+                    title: "第一财经",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -142,12 +143,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://news.qq.com/zt2020/page/feiyan.htm",
-                  title: "腾讯",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://news.qq.com/zt2020/page/feiyan.htm",
+                    title: "腾讯",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -164,12 +165,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://broccoli.uc.cn/apps/pneumonia/routes/index",
-                  title: "夸克",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://broccoli.uc.cn/apps/pneumonia/routes/index",
+                    title: "夸克",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -186,12 +187,13 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://voice.baidu.com/act/newpneumonia/newpneumonia",
-                  title: "百度",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url:
+                        "https://voice.baidu.com/act/newpneumonia/newpneumonia",
+                    title: "百度",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -208,13 +210,13 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url:
-                      "https://alihealth.taobao.com/medicalhealth/influenzamap?spm=a2oua.wuhaninfo.more.wenzhen&chInfo=spring2020-stay-in",
-                  title: "阿里健康",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url:
+                        "https://alihealth.taobao.com/medicalhealth/influenzamap?spm=a2oua.wuhaninfo.more.wenzhen&chInfo=spring2020-stay-in",
+                    title: "阿里健康",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(
@@ -231,12 +233,12 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                return Browser(
-                  url: "https://github.com/LiangWuCode/2019-nCoV",
-                  title: "战疫情github",
-                );
-              }));
+              routePush(
+                  Browser(
+                    url: "https://github.com/LiangWuCode/2019-nCoV",
+                    title: "github",
+                  ),
+                  RouterType.scale);
             },
           ),
           InkWell(

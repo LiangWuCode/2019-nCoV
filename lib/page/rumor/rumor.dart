@@ -7,6 +7,7 @@ import 'dart:convert' as convert;
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/ball_pulse_footer.dart';
 import 'package:flutter_easyrefresh/ball_pulse_header.dart';
+import 'package:nav_router/nav_router.dart';
 
 class Rumor extends StatefulWidget {
   Rumor({Key key}) : super(key: key);
@@ -102,12 +103,12 @@ class _RumorState extends State<Rumor> {
             ],
           ),
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-              return Browser(
-                url: "https://vp.fact.qq.com/article?id=" + item.id,
-                title: "辟谣",
-              );
-            }));
+            routePush(
+                Browser(
+                  url: "https://vp.fact.qq.com/article?id=" + item.id,
+                  title: "辟谣",
+                ),
+                RouterType.scale);
           },
         ),
       );
