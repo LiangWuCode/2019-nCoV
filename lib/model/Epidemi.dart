@@ -60,8 +60,6 @@ class Desc {
   String infectSource;
   String passWay;
   String imgUrl;
-  String dailyPic;
-  List<String> dailyPics;
   String summary;
   bool deleted;
   String countRemark;
@@ -86,7 +84,7 @@ class Desc {
   String note3;
   String generalRemark;
   String abroadRemark;
-  List<dynamic> marquee;
+  List<QuanguoTrendChart> quanguoTrendChart;
 
   Desc({
     this.id,
@@ -95,8 +93,6 @@ class Desc {
     this.infectSource,
     this.passWay,
     this.imgUrl,
-    this.dailyPic,
-    this.dailyPics,
     this.summary,
     this.deleted,
     this.countRemark,
@@ -121,7 +117,7 @@ class Desc {
     this.note3,
     this.generalRemark,
     this.abroadRemark,
-    this.marquee,
+    this.quanguoTrendChart,
   });
 
   factory Desc.fromJson(Map<String, dynamic> json) => Desc(
@@ -131,8 +127,6 @@ class Desc {
         infectSource: json["infectSource"],
         passWay: json["passWay"],
         imgUrl: json["imgUrl"],
-        dailyPic: json["dailyPic"],
-        dailyPics: List<String>.from(json["dailyPics"].map((x) => x)),
         summary: json["summary"],
         deleted: json["deleted"],
         countRemark: json["countRemark"],
@@ -157,7 +151,9 @@ class Desc {
         note3: json["note3"],
         generalRemark: json["generalRemark"],
         abroadRemark: json["abroadRemark"],
-        marquee: List<dynamic>.from(json["marquee"].map((x) => x)),
+        quanguoTrendChart: List<QuanguoTrendChart>.from(
+            json["quanguoTrendChart"]
+                .map((x) => QuanguoTrendChart.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -167,8 +163,6 @@ class Desc {
         "infectSource": infectSource,
         "passWay": passWay,
         "imgUrl": imgUrl,
-        "dailyPic": dailyPic,
-        "dailyPics": List<dynamic>.from(dailyPics.map((x) => x)),
         "summary": summary,
         "deleted": deleted,
         "countRemark": countRemark,
@@ -193,7 +187,29 @@ class Desc {
         "note3": note3,
         "generalRemark": generalRemark,
         "abroadRemark": abroadRemark,
-        "marquee": List<dynamic>.from(marquee.map((x) => x)),
+        "quanguoTrendChart":
+            List<dynamic>.from(quanguoTrendChart.map((x) => x.toJson())),
+      };
+}
+
+class QuanguoTrendChart {
+  String imgUrl;
+  String title;
+
+  QuanguoTrendChart({
+    this.imgUrl,
+    this.title,
+  });
+
+  factory QuanguoTrendChart.fromJson(Map<String, dynamic> json) =>
+      QuanguoTrendChart(
+        imgUrl: json["imgUrl"],
+        title: json["title"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "imgUrl": imgUrl,
+        "title": title,
       };
 }
 
@@ -203,7 +219,6 @@ class News {
   String pubDateStr;
   String title;
   String summary;
-  String body;
   String infoSource;
   String sourceUrl;
   String provinceId;
@@ -223,7 +238,6 @@ class News {
     this.pubDateStr,
     this.title,
     this.summary,
-    this.body,
     this.infoSource,
     this.sourceUrl,
     this.provinceId,
@@ -244,7 +258,6 @@ class News {
         pubDateStr: json["pubDateStr"],
         title: json["title"],
         summary: json["summary"],
-        body: json["body"],
         infoSource: json["infoSource"],
         sourceUrl: json["sourceUrl"],
         provinceId: json["provinceId"],
@@ -265,7 +278,6 @@ class News {
         "pubDateStr": pubDateStr,
         "title": title,
         "summary": summary,
-        "body": body,
         "infoSource": infoSource,
         "sourceUrl": sourceUrl,
         "provinceId": provinceId,

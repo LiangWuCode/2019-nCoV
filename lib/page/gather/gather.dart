@@ -32,7 +32,7 @@ class _gatherState extends State<gather> {
                   padding: EdgeInsets.only(top: 15, bottom: 15, left: 15),
                 )),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
                 return Browser(
                   url: "https://3g.dxy.cn/newh5/view/pneumonia",
                   title: "丁香园",

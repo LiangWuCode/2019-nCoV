@@ -585,11 +585,11 @@ class _EpidemicMapState extends State<EpidemicMap> {
         autoplay: true,
         itemBuilder: (BuildContext context, int index) {
           return Image.network(
-            epidemic.newslist[0].desc.dailyPics[index],
+            epidemic.newslist[0].desc.quanguoTrendChart[index].imgUrl,
             fit: BoxFit.fill,
           );
         },
-        itemCount: epidemic.newslist[0].desc.dailyPics.length,
+        itemCount: epidemic.newslist[0].desc.quanguoTrendChart.length,
         pagination: SwiperPagination(
             builder: DotSwiperPaginationBuilder(
                 activeColor: Color.fromRGBO(255, 53, 39, 1),
