@@ -63,16 +63,12 @@ class Desc {
   String summary;
   bool deleted;
   String countRemark;
+  int currentConfirmedCount;
   int confirmedCount;
   int suspectedCount;
   int curedCount;
   int deadCount;
   int seriousCount;
-  int suspectedIncr;
-  int confirmedIncr;
-  int curedIncr;
-  int deadIncr;
-  int seriousIncr;
   String virus;
   String remark1;
   String remark2;
@@ -96,16 +92,12 @@ class Desc {
     this.summary,
     this.deleted,
     this.countRemark,
+    this.currentConfirmedCount,
     this.confirmedCount,
     this.suspectedCount,
     this.curedCount,
     this.deadCount,
     this.seriousCount,
-    this.suspectedIncr,
-    this.confirmedIncr,
-    this.curedIncr,
-    this.deadIncr,
-    this.seriousIncr,
     this.virus,
     this.remark1,
     this.remark2,
@@ -130,16 +122,12 @@ class Desc {
         summary: json["summary"],
         deleted: json["deleted"],
         countRemark: json["countRemark"],
+        currentConfirmedCount: json["currentConfirmedCount"],
         confirmedCount: json["confirmedCount"],
         suspectedCount: json["suspectedCount"],
         curedCount: json["curedCount"],
         deadCount: json["deadCount"],
         seriousCount: json["seriousCount"],
-        suspectedIncr: json["suspectedIncr"],
-        confirmedIncr: json["confirmedIncr"],
-        curedIncr: json["curedIncr"],
-        deadIncr: json["deadIncr"],
-        seriousIncr: json["seriousIncr"],
         virus: json["virus"],
         remark1: json["remark1"],
         remark2: json["remark2"],
@@ -166,16 +154,12 @@ class Desc {
         "summary": summary,
         "deleted": deleted,
         "countRemark": countRemark,
+        "currentConfirmedCount": currentConfirmedCount,
         "confirmedCount": confirmedCount,
         "suspectedCount": suspectedCount,
         "curedCount": curedCount,
         "deadCount": deadCount,
         "seriousCount": seriousCount,
-        "suspectedIncr": suspectedIncr,
-        "confirmedIncr": confirmedIncr,
-        "curedIncr": curedIncr,
-        "deadIncr": deadIncr,
-        "seriousIncr": seriousIncr,
         "virus": virus,
         "remark1": remark1,
         "remark2": remark2,

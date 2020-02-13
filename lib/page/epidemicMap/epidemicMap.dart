@@ -144,23 +144,23 @@ class _EpidemicMapState extends State<EpidemicMap> {
                                   TextStyle(color: Colors.grey, fontSize: 12.0))
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          epidemic.newslist[0].desc.confirmedIncr >= 0
-                              ? Icon(Icons.trending_up,
-                                  color: Colors.red[900], size: 15.0)
-                              : Icon(Icons.trending_down),
-                          Text(
-                            epidemic.newslist[0].desc.confirmedIncr.toString(),
-                            style: TextStyle(
-                                color: Colors.orange,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 10.0),
-                          )
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   children: <Widget>[
+                      //     epidemic.newslist[0].desc.confirmedIncr >= 0
+                      //         ? Icon(Icons.trending_up,
+                      //             color: Colors.red[900], size: 15.0)
+                      //         : Icon(Icons.trending_down),
+                      //     Text(
+                      //       epidemic.newslist[0].desc.confirmedIncr.toString(),
+                      //       style: TextStyle(
+                      //           color: Colors.orange,
+                      //           fontWeight: FontWeight.bold,
+                      //           fontSize: 10.0),
+                      //     )
+                      //   ],
+                      // ),
                     ],
                   ),
                   Column(
@@ -189,24 +189,24 @@ class _EpidemicMapState extends State<EpidemicMap> {
                                   TextStyle(color: Colors.grey, fontSize: 12.0))
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          epidemic.newslist[0].desc.seriousIncr >= 0
-                              ? Icon(Icons.trending_up,
-                                  color: Colors.red[900], size: 15.0)
-                              : Icon(Icons.trending_down,
-                                  color: Colors.green[900], size: 15.0),
-                          Text(
-                            epidemic.newslist[0].desc.seriousIncr.toString(),
-                            style: TextStyle(
-                                color: Colors.red[800],
-                                fontWeight: FontWeight.bold,
-                                fontSize: 10.0),
-                          )
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   children: <Widget>[
+                      //     epidemic.newslist[0].desc.seriousIncr >= 0
+                      //         ? Icon(Icons.trending_up,
+                      //             color: Colors.red[900], size: 15.0)
+                      //         : Icon(Icons.trending_down,
+                      //             color: Colors.green[900], size: 15.0),
+                      //     Text(
+                      //       epidemic.newslist[0].desc.seriousIncr.toString(),
+                      //       style: TextStyle(
+                      //           color: Colors.red[800],
+                      //           fontWeight: FontWeight.bold,
+                      //           fontSize: 10.0),
+                      //     )
+                      //   ],
+                      // ),
                     ],
                   ),
                   Column(
@@ -235,24 +235,24 @@ class _EpidemicMapState extends State<EpidemicMap> {
                                   TextStyle(color: Colors.grey, fontSize: 12.0))
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          epidemic.newslist[0].desc.suspectedIncr >= 0
-                              ? Icon(Icons.trending_up,
-                                  color: Colors.red[900], size: 15.0)
-                              : Icon(Icons.trending_down,
-                                  color: Colors.green[900], size: 15.0),
-                          Text(
-                              epidemic.newslist[0].desc.suspectedIncr
-                                  .toString(),
-                              style: TextStyle(
-                                  color: Colors.red[300],
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 10.0))
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   children: <Widget>[
+                      //     epidemic.newslist[0].desc.suspectedIncr >= 0
+                      //         ? Icon(Icons.trending_up,
+                      //             color: Colors.red[900], size: 15.0)
+                      //         : Icon(Icons.trending_down,
+                      //             color: Colors.green[900], size: 15.0),
+                      //     Text(
+                      //         epidemic.newslist[0].desc.suspectedIncr
+                      //             .toString(),
+                      //         style: TextStyle(
+                      //             color: Colors.red[300],
+                      //             fontWeight: FontWeight.bold,
+                      //             fontSize: 10.0))
+                      //   ],
+                      // ),
                     ],
                   ),
                   Column(
@@ -279,22 +279,22 @@ class _EpidemicMapState extends State<EpidemicMap> {
                                   TextStyle(color: Colors.grey, fontSize: 12.0))
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          epidemic.newslist[0].desc.deadIncr >= 0
-                              ? Icon(Icons.trending_up,
-                                  color: Colors.red[900], size: 15.0)
-                              : Icon(Icons.trending_down,
-                                  color: Colors.green[900], size: 15.0),
-                          Text(epidemic.newslist[0].desc.deadIncr.toString(),
-                              style: TextStyle(
-                                  color: Colors.redAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 10.0))
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   children: <Widget>[
+                      //     epidemic.newslist[0].desc.deadIncr >= 0
+                      //         ? Icon(Icons.trending_up,
+                      //             color: Colors.red[900], size: 15.0)
+                      //         : Icon(Icons.trending_down,
+                      //             color: Colors.green[900], size: 15.0),
+                      //     Text(epidemic.newslist[0].desc.deadIncr.toString(),
+                      //         style: TextStyle(
+                      //             color: Colors.redAccent,
+                      //             fontWeight: FontWeight.bold,
+                      //             fontSize: 10.0))
+                      //   ],
+                      // ),
                     ],
                   ),
                   Column(
@@ -321,22 +321,22 @@ class _EpidemicMapState extends State<EpidemicMap> {
                                   TextStyle(color: Colors.grey, fontSize: 12.0))
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          epidemic.newslist[0].desc.curedIncr >= 0
-                              ? Icon(Icons.trending_up,
-                                  color: Colors.green, size: 15.0)
-                              : Icon(Icons.trending_down,
-                                  color: Colors.green[900], size: 15.0),
-                          Text(epidemic.newslist[0].desc.curedIncr.toString(),
-                              style: TextStyle(
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 10.0))
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   children: <Widget>[
+                      //     epidemic.newslist[0].desc.curedIncr >= 0
+                      //         ? Icon(Icons.trending_up,
+                      //             color: Colors.green, size: 15.0)
+                      //         : Icon(Icons.trending_down,
+                      //             color: Colors.green[900], size: 15.0),
+                      //     Text(epidemic.newslist[0].desc.curedIncr.toString(),
+                      //         style: TextStyle(
+                      //             color: Colors.green,
+                      //             fontWeight: FontWeight.bold,
+                      //             fontSize: 10.0))
+                      //   ],
+                      // ),
                     ],
                   ),
                 ],
