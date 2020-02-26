@@ -34,10 +34,21 @@ class Api {
   }
 
   ///最新疫情消息
-  static final String epidemicUrl = "/ncov/index?key=" + key;
+  // static final String epidemicUrl = "/ncov/index?key=" + key;
+  // static Future epidemi(data) async {
+  //   var result =
+  //       await HttpUtils.request(epidemicUrl, method: HttpUtils.GET, data: data);
+  //   return result;
+  // }
+
+  static final String epidemicUrl =
+      "https://www.wuliang.art/ncov/statistics/flutterAppForMyself";
+
   static Future epidemi(data) async {
-    var result =
-        await HttpUtils.request(epidemicUrl, method: HttpUtils.GET, data: data);
+    BotToast.showLoading();
+    Response response = await Dio().get(epidemicUrl);
+    var result = response.data;
+    BotToast.closeAllLoading();
     return result;
   }
 
