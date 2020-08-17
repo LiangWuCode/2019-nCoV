@@ -6,6 +6,7 @@
 
 ##### 欢迎Star..... 交流学习。
 
+### 下载地址：https://github.com/LiangWuCode/2019-nCoV/releases/tag/1.0
 
 ## 总体图：
 
